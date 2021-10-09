@@ -3,33 +3,36 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<meta property="og:title" content="Bamboozled: O jogo!">
-	<meta property="og:type" content="game">
-	<meta property="og:url" content="https://www.bamboozled.pt/">
-	<meta property="og:description" content="Bamboozled é um jogo 2D Top-Down com estilo Pixel Art feito no Unity.">
-	<meta property="og:image" content="https://www.bamboozled.pt/images/personagem.png">
+	<meta property="og:description" content="Portfolio - Bruno Teixeira">
 	<link rel="stylesheet" type="text/css" href="css.css"/>
-	<link rel="shortcut icon" href="https://www.bamboozled.pt/images/icons/favicon.ico"/>
-	<title>Bamboozled - Página Inicial</title>
+	<title>Portfólio - Bruno Teixeira</title>
 </head>
-<body>
-	<?PHP include 'functions.php'; 
-	navbar();?>
-	
-	<!--INICIO SECTION START-->
-	<div id="inicio">
-		<div class="parallax" id="image1">
-			<iframe
-			src="https://www.youtube.com/embed/LDx5FjZYwSg"
-			srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LDx5FjZYwSg?autoplay=1><img src=https://img.youtube.com/vi/LDx5FjZYwSg/hqdefault.jpg alt='Bamboozled - Teaser Trailer'><span>▶</span></a>"
-			frameborder="0"
-			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-			allowfullscreen
-			title="Bamboozled - Teaser Trailer"
-			></iframe>
-		</div>
-	</div>
-	<!--INICIO SECTION END-->
+<body>	
+	<!--NAVBAR START-->
+	<ul class="topnav">	
+		<li class="dropdown"><a href="index.php" class="dropbtn">Inicio</a>
+			<div class="dropdown-content">
+				<a href="index.php#acerca">Acerca</a>
+				<a href="index.php#download">Downloads</a>
+			</div>
+		</li>
+		<li><a href="tabelas.php">Tabelas de classificação</a></li>
+		<li><a href="https://bamboozled-the-game.blogspot.com/">Blogue</a></li>
+		<li><a href="autor.php">Autor</a></li>
+		<?PHP
+			connectDB();
+			if(isset($_SESSION["name"], $_SESSION["password"]))
+			{
+				echo "<li class='dropdown' style='float: right'><a href='utilizador.php' class='dropbtn'>" . $_SESSION['name'] . "</a>
+				<div class='dropdown-content'><a href='endsession.php'>Logout</a></div></li>";
+			}
+			else
+			{
+				echo "<li style='float: right'><a href='register.php'>Registo/Login</a></li>";
+			}
+		?>
+	</ul>
+	<!--NAVBAR END-->
 	
 	<!--ACERCA SECTION START-->
 	<div id="acerca">
@@ -102,11 +105,5 @@
 		</div>
 	</div>
 	<!--DOWNLOAD SECTION END-->
-	
-	<?PHP 
-		mysqli_close($conn);
-		footer();
-	?>	
-	
 </body>
 </html>
