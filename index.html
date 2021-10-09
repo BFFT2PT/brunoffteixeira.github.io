@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta property="og:description" content="Portfolio - Bruno Teixeira">
 	<link rel="stylesheet" type="text/css" href="css.css"/>
-	<title>Portfólio - Bruno Teixeira</title>
+	<title>Portfolio - Bruno Teixeira</title>
 </head>
 <body>	
 	<!--NAVBAR START-->
@@ -19,29 +19,18 @@
 		<li><a href="tabelas.php">Tabelas de classificação</a></li>
 		<li><a href="https://bamboozled-the-game.blogspot.com/">Blogue</a></li>
 		<li><a href="autor.php">Autor</a></li>
-		<?PHP
-			connectDB();
-			if(isset($_SESSION["name"], $_SESSION["password"]))
-			{
-				echo "<li class='dropdown' style='float: right'><a href='utilizador.php' class='dropbtn'>" . $_SESSION['name'] . "</a>
-				<div class='dropdown-content'><a href='endsession.php'>Logout</a></div></li>";
-			}
-			else
-			{
-				echo "<li style='float: right'><a href='register.php'>Registo/Login</a></li>";
-			}
-		?>
 	</ul>
 	<!--NAVBAR END-->
 	
 	<!--ACERCA SECTION START-->
 	<div id="acerca">
-		<p>
-		<div class="div_pad">
-		Bamboozled é um jogo 2D Top-Down com estilo Pixel Art feito no Unity.
-		Neste website podem consultar o blogue de desenvolvimento, fazer o download do jogo e espreitar as pontuações de cada jogador e tentar superá-los!
-		</div>
-		</p>
+		<div class="banner-image">
+			<div class="banner-text">
+				<h1>print("Hello!");</h1>
+				<p>I’m <b>Bruno Teixeira</b>, an aspiring game programmer and currently a student.</p>
+				<button>About me.</button>
+			</div>
+		</div> 
 		<!--IMAGE GALLERY START-->
 		<div class="responsive">
 			<div class="gallery">
